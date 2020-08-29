@@ -12,7 +12,8 @@ export default class Nav extends React.Component {
                 </div>
                 <div className="navigation">
                     <a>How it works?</a>
-                    <button>Join</button>
+                    <a>Get started</a>
+                    <button>Go Live</button>
                 </div>
             </div>
         )
