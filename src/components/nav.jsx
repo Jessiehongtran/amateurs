@@ -12,7 +12,7 @@ export default class Nav extends React.Component {
                 </div>
                 <div className="navigation">
                     <a>How it works?</a>
-                    <a>Get started</a>
+                    <a href="/signup">Get started</a>
                     <button>Go Live</button>
                 </div>
             </div>

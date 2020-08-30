@@ -120,7 +120,8 @@
 
             .each_player {
                 display: flex;
-                margin: 20px;
+                // margin: 20px;
+                padding: 20px;
 
                 .avatar {
                     width: 50px;
@@ -160,6 +161,11 @@
                         font-size: 14px
                     }
                 }
+            }
+
+            .each_player:hover {
+                background-color: #F3F1F1 ;
+                border-radius: 2px;
             }
         }
     }
