@@ -10,7 +10,7 @@ export default class CreateProfile extends React.Component {
 
     render(){
         return (
-            <div>
+            <div className="create_profile">
                 <input
                     name="nickname" 
                 />

@@ -3,6 +3,8 @@ import Nav from './components/nav';
 import './App.css';
 import Main from './components/main';
 import SignUp from './components/signup';
+import CreateLive from './components/createLive';
+import CreateProfile from './components/createProfile';
 import { Route } from 'react-router-dom';
 
 function App() {
@@ -28,6 +30,30 @@ function App() {
             return (
               <>
                 <SignUp  {...props}/>
+              </>
+            )
+          }
+        } 
+      />
+      <Route
+        exact path="/createLive"
+        render={
+          props => {
+            return (
+              <>
+                <CreateLive  {...props}/>
+              </>
+            )
+          }
+        } 
+      />
+      <Route
+        exact path="/createProfile"
+        render={
+          props => {
+            return (
+              <>
+                <CreateProfile  {...props}/>
               </>
             )
           }
