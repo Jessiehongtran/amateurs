@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
+    background-color: #F6F6F6  ;
 
     .main {
         display: flex;
@@ -9,6 +10,9 @@
         width: 70%;
         border-right: 1px solid #F2F2F2;
         border-left: 1px solid #F2F2F2;
+        color: #2F2D2D ;
+        background-color: white;
+        
 
         @media (max-width: 1000px){
             width: 100%;
@@ -20,6 +24,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: white ;
+           
            
             .title {
                 width: 80%;
@@ -40,7 +46,7 @@
                     display: flex;
                     justify-content: space-between;
                     padding: 30px;
-                    
+                   
 
                     .icon_joins {
                         display: flex;
@@ -109,6 +115,7 @@
                 .each_event:hover {
                     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
                     transition: box-shadow 500ms;
+                    background-color: white;
                 }
             }
         }
@@ -118,6 +125,7 @@
             flex-direction: column;
             flex-wrap: wrap;
             width: 30%;
+            background-color: #FCFCFC  ;
 
             .each_player {
                 display: flex;
@@ -138,6 +146,7 @@
                     .username {
                         margin: 0;
                         font-size: 16px;
+                        color: #403E3E  ;
 
                         .status {
                             display: inline-block;
@@ -169,7 +178,7 @@
             }
 
             .each_player:hover {
-                background-color: #F3F1F1 ;
+                background-color: #F6F6F6  ;
                 border-radius: 2px;
             }
         }
