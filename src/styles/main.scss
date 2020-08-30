@@ -1,6 +1,8 @@
 .main_container {
     display: flex;
     justify-content: center;
+    font-family: 'Dancing Script', cursive;
+
 
     .main {
         display: flex;
@@ -149,13 +151,13 @@
 
                     .age {
                         margin: 0 0 0 20px;
-                        font-size: 12px
+                        font-size: 14px
 
                     }
 
                     .join_duration {
                         margin: 0 0 0 20px;
-                        font-size: 12px
+                        font-size: 14px
                     }
                 }
             }

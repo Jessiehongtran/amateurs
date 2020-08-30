@@ -5,6 +5,8 @@
     align-items: center;
     border-bottom: 1px solid #F2F2F2;
     height: 60px;
+    font-family: 'Dancing Script', cursive;
+
 
     .logo {
         // background-color: blue;
@@ -19,6 +21,10 @@
 
         a {
             margin-right: 10px;
+        }
+
+        button {
+            font-family: 'Dancing Script', cursive;
         }
     }
 }
