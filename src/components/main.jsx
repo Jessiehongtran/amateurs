@@ -51,8 +51,7 @@ export default class Main extends React.Component {
                     <div className="players">
                         {players.map(player => 
                             <div className="each_player">
-                                <div className="avatar">
-                                </div>
+                                <img className="avatar" src={player.avatar}/>
                                 <div className="info">
                                     <h4 className="username">
                                         <div className="status">
