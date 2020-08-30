@@ -9,6 +9,10 @@
         border-right: 1px solid #F2F2F2;
         border-left: 1px solid #F2F2F2;
 
+        @media (max-width: 1000px){
+            width: 100%;
+        }
+
         .live_events {
             width: 70%;
             border-right: 1px solid #F2F2F2;
@@ -63,6 +67,8 @@
                         flex-direction: column;
                         align-items: flex-start;
 
+                        
+
                         .id {
                             font-size: 25px;
                             font-weight: bold;
@@ -71,7 +77,8 @@
 
                         .created_by {
                             font-size: 14px;
-                            color: grey
+                            color: grey;
+                            text-align: left;
                         }
 
                         .who_joined {
@@ -97,7 +104,7 @@
                 }
 
                 .each_event:hover {
-                    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+                    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
                     transition: box-shadow 500ms;
                 }
             }
