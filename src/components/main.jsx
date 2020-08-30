@@ -1,5 +1,6 @@
 import React from 'react';
 import { players } from '../data/players';
+import { events } from '../data/events';
 import '../styles/main.scss'
 
 export default class Main extends React.Component {
@@ -16,7 +17,36 @@ export default class Main extends React.Component {
             <div className="main_container">
                 <div className="main">
                     <div className="live_events">
-                        <p>hahaha</p>
+                        <h2 className="title"> Live sessions</h2>
+                        <div className="events">
+                            {events.map(event => 
+                                <div className="each_event">
+                                    <div className="icon_joins">
+                                        <div className="icon">
+                                            {event.icon}
+                                        </div>
+                                        <div className="joins">
+                                            {event.joined}
+                                        </div>
+                                    </div>
+                                    <div className="info">
+                                        <div className="id">
+                                            #{event.id}
+                                        </div>
+                                        <div className="created_by">
+                                            Created by {event.host.name}
+                                        </div>
+                                        <div className="who_joined">
+                                            {event.participants.map(each => 
+                                                <img className="avatar" src={each.avatar}/>)}
+                                        </div>
+                                        <div className="how_long">
+                                            played for 3 hours
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     </div>
                     <div className="players">
                         {players.map(player => 
@@ -39,7 +69,6 @@ export default class Main extends React.Component {
                                             + (currentDate - parseInt(player.date_joined.split("/")[1]))
                                         } days
                                     </p>
-                                    <button>Invite</button>
                                 </div>
                             </div>)}
                     </div>
