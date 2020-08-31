@@ -3,6 +3,12 @@ import '../styles/nav.scss'
 
 
 export default class Nav extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+
+        }
+    }
 
     render(){
         return (
@@ -13,7 +19,7 @@ export default class Nav extends React.Component {
                 <div className="navigation">
                     <a>How it works?</a>
                     <a href="/signup">Get started</a>
-                    <button>Go Live</button>
+                    <button onClick={() => this.props.history.push('/createLive')}>Go Live</button>
                 </div>
             </div>
         )
