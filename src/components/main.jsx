@@ -23,7 +23,7 @@ export default class Main extends React.Component {
                                 <div className="each_event">
                                     <div className="icon_joins">
                                         <div className="icon">
-                                            {event.icon}
+                                            <span className="music-icon"><i class="fas fa-music"></i></span>
                                         </div>
                                         <div className="joins">
                                             {event.joined}

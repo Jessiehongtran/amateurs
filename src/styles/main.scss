@@ -61,6 +61,14 @@
                             border: 1px solid grey;
                             margin-bottom: 10px;
                             border-radius: 4px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .music-icon {
+                                color: #a057ee;
+                                font-size: 20px;
+                            }
                         }
 
                         .joins {
