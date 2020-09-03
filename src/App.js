@@ -1,10 +1,10 @@
 import React from 'react';
-import Nav from './components/nav';
+import Nav from './components/main/nav';
 import './App.css';
-import Main from './components/main';
-import SignUp from './components/signup';
-import CreateLive from './components/createLive';
-import CreateProfile from './components/createProfile';
+import Main from './components/main/main';
+import SignUp from './components/players/signup';
+import CreateLive from './components/events/createLive';
+import CreateProfile from './components/players/createProfile';
 import { Route } from 'react-router-dom';
 
 function App() {

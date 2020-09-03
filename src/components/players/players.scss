@@ -1,0 +1,62 @@
+.players {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 30%;
+    background-color: #FCFCFC  ;
+
+    .each_player {
+        display: flex;
+        // margin: 20px;
+        padding: 20px;
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border: 1px solid grey;
+            border-radius: 4px;
+        }
+
+        .info {
+            text-align: left;
+            
+
+            .username {
+                margin: 0;
+                font-size: 16px;
+                color: #403E3E  ;
+
+                .status {
+                    display: inline-block;
+                    background-color: green;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    margin-bottom: -2px;
+                    border-radius: 50%;
+                    height: 10px;
+                    width: 10px;
+                
+                }
+
+            }
+
+            .age {
+                margin: 0 0 0 20px;
+                font-size: 14px;
+                color: grey
+
+            }
+
+            .join_duration {
+                margin: 0 0 0 20px;
+                font-size: 14px;
+                color: grey
+            }
+        }
+    }
+
+    .each_player:hover {
+        background-color: #F6F6F6  ;
+        border-radius: 2px;
+    }
+}

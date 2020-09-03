@@ -1,0 +1,21 @@
+.main_container {
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F6F6F6  ;
+
+    .main {
+        display: flex;
+        // flex-wrap: wrap;
+        width: 70%;
+        border-right: 1px solid #F2F2F2;
+        border-left: 1px solid #F2F2F2;
+        color: #2F2D2D ;
+        background-color: white;
+        
+
+        @media (max-width: 1000px){
+            width: 100%;
+        }
+    }
+}
