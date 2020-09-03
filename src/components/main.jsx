@@ -44,6 +44,9 @@ export default class Main extends React.Component {
                                             played for 3 hours
                                         </div>
                                     </div>
+                                    <div className="join-btn">
+                                        <a href={`https://client-a008qpss6.vercel.app/room/${event.id}`}>Join</a>
+                                    </div>
                                 </div>
                             )}
                         </div>
