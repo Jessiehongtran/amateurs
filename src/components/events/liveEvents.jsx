@@ -13,16 +13,16 @@ export default class LiveEvents extends React.Component {
         }
     }
 
-    componentDidMount(){
-        axios.get(`${API_URL}/events`)
-             .then(res => {
-                 console.log(res.data)
-                this.setState({events: res.data})
-             })
-             .catch(err => {
-                 console.log(err)
-             })
-    }
+    // componentDidMount(){
+    //     axios.get(`${API_URL}/events`)
+    //          .then(res => {
+    //             console.log(res.data)
+    //             this.setState({events: res.data})
+    //          })
+    //          .catch(err => {
+    //             console.log(err)
+    //          })
+    // }
 
 
     render(){

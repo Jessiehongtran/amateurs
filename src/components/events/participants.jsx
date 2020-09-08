@@ -27,8 +27,10 @@ export default class Participants extends React.Component {
 
         return (  
             <div className="who_joined">
-                {participants.map(each => 
-                    <img className="avatar" src={each.avatar}/>)} 
+                {participants.length > 0
+                ? participants.map(each => 
+                    <img className="avatar" src={each.avatar}/>)
+                : null} 
             </div>
         )
     }
