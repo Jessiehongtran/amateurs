@@ -1,0 +1,13 @@
+.who_joined {
+    display: flex;
+    flex-wrap: wrap;
+
+    .avatar {
+        width: 30px;
+        height: 30px;
+        border: 1px solid grey;
+        margin: 5px;
+        border-radius: 4px;
+    }
+
+}

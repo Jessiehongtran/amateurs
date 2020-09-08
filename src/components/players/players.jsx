@@ -18,6 +18,7 @@ export default class Players extends React.Component {
         const currentMonth = (new Date()).getMonth() + 1
 
         const currentDate = (new Date()).getDate() 
+        console.log('players', players)
         
         return (
             <div className="players">

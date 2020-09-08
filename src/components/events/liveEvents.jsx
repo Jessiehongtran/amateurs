@@ -1,50 +1,45 @@
 import React from 'react';
 import { events } from '../../data/events';
-import './liveEvents.scss'
+import './liveEvents.scss';
+import { API_URL } from '../../config';
+import axios from 'axios';
+import Event from './event';
 
 export default class LiveEvents extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-
+            events: []
         }
     }
 
+    componentDidMount(){
+        axios.get(`${API_URL}/events`)
+             .then(res => {
+                 console.log(res.data)
+                this.setState({events: res.data})
+             })
+             .catch(err => {
+                 console.log(err)
+             })
+    }
+
+
     render(){
+        console.log('events', this.state.events)
+        const { events } = this.state
+
+        console.log('events', events)
+
         return (
             <div className="live_events">
                 <h2 className="title"> Live sessions</h2>
                 <div className="events">
-                    {events.map(event => 
-                        <div className="each_event">
-                            <div className="icon_joins">
-                                <div className="icon">
-                                    <span className="music-icon"><i class="fas fa-music"></i></span>
-                                </div>
-                                <div className="joins">
-                                    {event.joined}
-                                </div>
-                            </div>
-                            <div className="info">
-                                <div className="id">
-                                    #{event.id}
-                                </div>
-                                <div className="created_by">
-                                    Created by {event.host.name}
-                                </div>
-                                <div className="who_joined">
-                                    {event.participants.map(each => 
-                                        <img className="avatar" src={each.avatar}/>)}
-                                </div>
-                                <div className="how_long">
-                                    played for 3 hours
-                                </div>
-                            </div>
-                            <div className="join-btn">
-                                <a href={`https://client-a008qpss6.vercel.app/room/${event.id}`}>Join</a>
-                            </div>
-                        </div>
-                    )}
+                    {events && events.length > 0
+                    ? events.map(event => 
+                        <div key={event.id}><Event eventId={event.id}/></div>
+                        )
+                    : null}
                 </div>
             </div>
         )

@@ -1,95 +1,62 @@
 .signup {
-    width: 100%;
-    height: 100vh;
-    background-color: grey;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
     font-family: 'Poppins', sans-serif;
-    background-image: url("https://live.staticflickr.com/2386/1726393439_aa21101d88_b.jpg");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: cover;
 
-    .signup-box {
-        width: 20%;
-        background-color: white;
-        height: auto;
+    .image {
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .profile {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        padding: 30px;
-        font-family: 'Poppins', sans-serif;
+        width: 50%;
+        position: relative;
+        background-color: white;
+        height: 100vh;
 
-        @media (max-width: 1000px){
-            width: 30%;
-        }
-
-        @media (max-width: 500px){
-            width: 50%;
-        }
 
         form {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 70%;
 
-            h3 {
-                margin-bottom: 40px;
+            .title {
+                text-align: left
             }
-           
 
             input {
-                width: 100%;
-                margin-bottom: 20px;
-                height: 40px;
-                border-radius: 20px;
+                border-radius: 4px;
+                height: 50px;
                 border: 1px solid grey;
+                margin-bottom: 20px;
                 padding-left: 20px;
-                box-sizing: border-box;
                 font-family: 'Poppins', sans-serif;
+                font-size: 14px;
             }
 
-            input:focus {
-                outline: none;
-            }
-
-            .signup-btn {
-                width: 100%;
-                border-radius: 16px;
-                height: 35px;
+            button {
+                padding: 8px;
+                border-radius: 4px;
                 border: none;
                 background-color: #59BDF5;
-                font-size: 14px;
                 font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                width: 50%;
             }
 
-        }
-
-        .google-btn {
-            margin-top: 10px;
-            width: 100%;
-            border-radius: 16px;
-            height: 35px;
-            border: none;
-            background-color: #97D8F4;
-            font-size: 14px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .split {
-            width: 80%; 
-            text-align: center; 
-            border-bottom: 1px solid grey; 
-            line-height: 0.1em;
-            margin: 40px 0 20px; 
-
-            span { 
-                background:#fff; 
-                padding:0 10px; 
+            .remind {
+                text-align: left
             }
-         } 
-
-        .signin-ask {
-            font-size: 14px;
         }
-
     }
 }

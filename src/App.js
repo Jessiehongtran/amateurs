@@ -2,9 +2,9 @@ import React from 'react';
 import Nav from './components/main/nav';
 import './App.css';
 import Main from './components/main/main';
-import SignUp from './components/players/signup';
+import SignIn from './components/players/signin';
 import CreateLive from './components/events/createLive';
-import CreateProfile from './components/players/createProfile';
+import SignUp from './components/players/signup';
 import { Route } from 'react-router-dom';
 
 function App() {
@@ -24,12 +24,12 @@ function App() {
         } 
       />
       <Route
-        exact path="/signup"
+        exact path="/signin"
         render={
           props => {
             return (
               <>
-                <SignUp  {...props}/>
+                <SignIn  {...props}/>
               </>
             )
           }
@@ -48,12 +48,12 @@ function App() {
         } 
       />
       <Route
-        exact path="/createProfile"
+        exact path="/signup"
         render={
           props => {
             return (
               <>
-                <CreateProfile  {...props}/>
+                <SignUp  {...props}/>
               </>
             )
           }

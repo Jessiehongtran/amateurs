@@ -1,12 +1,20 @@
 import React from 'react';
 import './signup.scss';
+import axios from 'axios';
+import { API_URL } from '../../config';
 
 export default class SignUp extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            email: "",
-            password: ""
+            user: {
+                nick_name: "",
+                email: "",
+                password: "",
+                year_of_birth: 0,
+                moto: "",
+                avatar: ""
+            }
         }
 
         this.handleChange = this.handleChange.bind(this)
@@ -15,39 +23,83 @@ export default class SignUp extends React.Component {
 
     handleChange(e){
         this.setState({
-            [e.target.name]: e.target.value
+            user: {
+                ...this.state.user,
+                [e.target.name]: e.target.value
+            }
         })
+    }
+
+    postUser(user){
+        axios.post(`${API_URL}/users`, user)
+             .then(res => {
+                //update user_id on localStorage
+                localStorage.setItem('user_id', res.data.id)
+                //push to go back
+                this.props.history.goBack()
+             })
+             .catch(err => {
+                 console.log(err)
+             })
     }
 
     handleSubmit(e){
         e.preventDefault()
-        console.log(this.state)
+        console.log(this.state.user)
         //push this to backend
+        this.postUser(this.state.user)
+            
     }
 
     render(){
         return (
             <div className="signup">
-                <div className="signup-box">
+                <div className="image">
+                    <img src="https://i.pinimg.com/originals/ce/e2/8a/cee28aab91ad2893db9d7150ffef605e.jpg"/>
+                </div>
+                <div className="profile">
                     <form onSubmit={this.handleSubmit}>
-                        <h3>Sign Up Now</h3>
+                        <h1 className="title">Sign Up</h1>
                         <input
-                            type="email"
+                            name="nick_name"
+                            type="text"
+                            placeholder="Nick name"
+                            onChange={this.handleChange}
+                        />
+                        <input
                             name="email"
+                            type="email"
                             placeholder="Email"
                             onChange={this.handleChange}
                         />
                         <input
-                            type="password"
                             name="password"
+                            type="password"
                             placeholder="Password"
                             onChange={this.handleChange}
                         />
-                        <button className="signup-btn">Sign Up</button>
+                        <input
+                            name="year_of_birth"
+                            type="number"
+                            placeholder="Year Of Birth"
+                            onChange={this.handleChange}
+                        />
+                        <input
+                            name="avatar"
+                            placeholder="Avatar"
+                            type="file" 
+                            onChange={this.handleChange}
+                        />
+                        <input
+                            name="moto"
+                            type="text"
+                            placeholder="Your moto"
+                            onChange={this.handleChange}
+                        />
+                        <button>SignUp</button>
+                        <p className="remind">Already have an account? <a href="/signin">Sign In</a></p>
                     </form>
-                    <p className="split"><span> Or </span></p>
-                    <button className="google-btn">Log in with Google</button>
-                    <p className="signin-ask">Do you have an account? <a href="#">Sign In</a></p>
+                    
                 </div>
             </div>
         )
