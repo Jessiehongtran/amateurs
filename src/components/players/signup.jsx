@@ -31,8 +31,9 @@ export default class SignUp extends React.Component {
     }
 
     postUser(user){
-        axios.post(`${API_URL}/users`, user)
+        axios.post(`${API_URL}/users`, user, { withCredentials: true })
              .then(res => {
+                console.log(res.data)
                 //update user_id on localStorage
                 localStorage.setItem('user_id', res.data.id)
                 //push to go back

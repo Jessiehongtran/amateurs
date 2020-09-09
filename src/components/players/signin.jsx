@@ -28,6 +28,7 @@ export default class SignIn extends React.Component {
         Axios.post(`${API_URL}/users/login`, this.state, { withCredentials: true })
              .then(res => {
                  console.log(res.data)
+                 console.log('cookie check', document.cookie)
                  this.props.history.push('/')
              })
              .catch(err => {
