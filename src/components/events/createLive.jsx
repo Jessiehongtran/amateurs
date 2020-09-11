@@ -16,8 +16,9 @@ export default class CreateLive extends React.Component {
                 description: "",
                 joined: 0,
                 host_id: 0,
-                banner_img: ""
+                banner_img: "",
             },
+            afterToday: false,
             posted: false
         }
 
@@ -46,7 +47,29 @@ export default class CreateLive extends React.Component {
              })
     }
 
+    startAfterToday(time){
+        const curYear = (new Date()).getUTCFullYear()
+        const curMonth = (new Date()).getUTCMonth() + 1
+        const curDate = (new Date()).getUTCDate()
+        const year = parseInt(time.split("-")[0])
+        const month = parseInt(time.split("-")[1])
+        const date = parseInt(time.split("-")[2])
+
+        if (year >= curYear && month >= curMonth && date >= curDate){
+            return true
+        }
+        return false
+    }
+
     handleChange(e){
+        console.log(e.target.name, e.target.value)
+        if (e.target.name == "start_date"){
+            if (this.startAfterToday(e.target.value)){
+                this.setState({afterToday: true})
+            } else {
+                this.setState({afterToday: false})
+            }
+        }
         this.setState({
             event: {
                 ...this.state.event,
@@ -96,6 +119,9 @@ export default class CreateLive extends React.Component {
                             className="date"
                             onChange={this.handleChange}
                         />
+                        {this.state.afterToday
+                        ? null
+                        : <p className="remind">Date has to be after today</p>}
                         <input
                             name="start_time" 
                             placeholder="Start Time"
