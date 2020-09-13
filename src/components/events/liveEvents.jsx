@@ -21,13 +21,6 @@ export default class LiveEvents extends React.Component {
              .catch(err => {
                 console.log(err)
              })
-        axios.get(`${API_URL}/users`, {withCredentials: true})
-             .then(res => {
-                console.log('check users', res.data)
-             })
-             .catch(err => {
-                console.log(err)
-             })
     }
 
 

@@ -22,22 +22,54 @@ export default class SignUp extends React.Component {
     }
 
     handleChange(e){
-        this.setState({
-            user: {
-                ...this.state.user,
-                [e.target.name]: e.target.value
-            }
-        })
+        if (e.target.name == "avatar"){
+            //post image here to cloudinary then return url and update state
+            const files = Array.from(e.target.files)
+
+            const formData = new FormData()
+
+            files.forEach((file, i) => {
+                formData.append(i, file)
+            })
+
+            fetch(`${API_URL}/images`, {
+                method: 'POST',
+                body: formData
+              })
+              .then(res => res.json())
+              .then(imgUrl => {
+                this.setState({
+                    user: {
+                        ...this.state.user,
+                        avatar: imgUrl
+                    }
+                })
+              })
+              .catch(err => {
+                  console.log(err.message)
+              })
+            
+            
+        }
+        else {
+            this.setState({
+                user: {
+                    ...this.state.user,
+                    [e.target.name]: e.target.value
+                }
+            })
+        }
     }
 
     postUser(user){
+        console.log('user', user)
         axios.post(`${API_URL}/users`, user, { withCredentials: true })
              .then(res => {
                 console.log(res.data)
                 //update user_id on localStorage
                 localStorage.setItem('user_id', res.data.id)
                 //push to go back
-                this.props.history.goBack()
+                // this.props.history.goBack()
              })
              .catch(err => {
                  console.log(err)
@@ -46,6 +78,7 @@ export default class SignUp extends React.Component {
 
     handleSubmit(e){
         e.preventDefault()
+        console.log('handlesubmit')
         console.log(this.state.user)
         //push this to backend
         this.postUser(this.state.user)
@@ -53,6 +86,7 @@ export default class SignUp extends React.Component {
     }
 
     render(){
+
         return (
             <div className="signup">
                 <div className="image">
