@@ -34,6 +34,36 @@
                 text-align: left
             }
 
+            p {
+                 margin: 0 0 5px 0;
+                 text-align: left
+             }
+
+            label {
+                width: 50%;
+                border: 1px dashed #59BDF5;
+                margin-bottom: 20px;
+
+                .ava_icon {
+                    font-size: 40px;
+                    color: #59BDF5;
+                    position: relative;
+                   
+                    
+                }
+
+                .ava_icon:hover {
+                    color: grey;
+                }
+            }
+
+
+            input[type=file] { 
+                visibility: hidden;
+                position: absolute;
+                width: 50%;
+            }
+
             input {
                 border-radius: 4px;
                 height: 50px;

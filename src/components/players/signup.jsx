@@ -8,12 +8,12 @@ export default class SignUp extends React.Component {
         super(props);
         this.state = {
             user: {
-                nick_name: "",
+                nick_name: "No name",
                 email: "",
                 password: "",
-                year_of_birth: 0,
+                year_of_birth: null,
                 moto: "",
-                avatar: ""
+                avatar: "https://img.favpng.com/10/3/18/string-instrument-music-musical-instrument-string-instrument-violin-png-favpng-s9QvWhFjHrdkCsPQZ5SKySfJY.jpg"
             }
         }
 
@@ -38,6 +38,7 @@ export default class SignUp extends React.Component {
               })
               .then(res => res.json())
               .then(imgUrl => {
+                console.log('imgUrl', imgUrl)
                 this.setState({
                     user: {
                         ...this.state.user,
@@ -81,7 +82,7 @@ export default class SignUp extends React.Component {
         console.log('handlesubmit')
         console.log(this.state.user)
         //push this to backend
-        this.postUser(this.state.user)
+        setTimeout(() => this.postUser(this.state.user), 3000)
             
     }
 
@@ -120,17 +121,23 @@ export default class SignUp extends React.Component {
                             onChange={this.handleChange}
                         />
                         <input
-                            name="avatar"
-                            placeholder="Avatar"
-                            type="file" 
-                            onChange={this.handleChange}
-                        />
-                        <input
                             name="moto"
                             type="text"
                             placeholder="Your moto"
                             onChange={this.handleChange}
                         />
+                        <p>Your avatar</p>
+                        <label htmlFor='image'>
+                            <span className="ava_icon"><i class="far fa-image"></i></span>
+                        </label>
+                        <input
+                            name="avatar"
+                            placeholder="Avatar"
+                            id="image"
+                            type="file" 
+                            onChange={this.handleChange}
+                        />
+                       
                         <button>SignUp</button>
                         <p className="remind">Already have an account? <a href="/signin">Sign In</a></p>
                     </form>

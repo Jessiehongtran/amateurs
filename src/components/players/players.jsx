@@ -27,6 +27,7 @@ export default class Players extends React.Component {
 
         const currentYear = (new Date()).getFullYear()
         console.log(currentYear)
+        console.log(this.state.players)
 
         const currentMonth = (new Date()).getMonth() + 1
 
@@ -45,7 +46,7 @@ export default class Players extends React.Component {
                                 {player.nick_name}
                             </h4>
                             <p className="age">
-                                Age: {player.year_of_birth === null ? 'unknown' : (currentYear - player.year_of_birth) + "yrs old"} 
+                                Age: {player.year_of_birth === null ? 'unknown' : (currentYear - parseInt(player.year_of_birth)) + "yrs old"} 
                             </p>
                             {/* <p className="join_duration">
                                 Joined: {
