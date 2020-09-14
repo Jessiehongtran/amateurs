@@ -14,7 +14,8 @@ export default class SignUp extends React.Component {
                 year_of_birth: null,
                 moto: "",
                 avatar: "https://img.favpng.com/10/3/18/string-instrument-music-musical-instrument-string-instrument-violin-png-favpng-s9QvWhFjHrdkCsPQZ5SKySfJY.jpg"
-            }
+            },
+            image: ""
         }
 
         this.handleChange = this.handleChange.bind(this)
@@ -26,6 +27,16 @@ export default class SignUp extends React.Component {
             //post image here to cloudinary then return url and update state
             const files = Array.from(e.target.files)
 
+            var reader = new FileReader();
+            files.forEach(img => {
+                reader.readAsDataURL(img)
+
+                reader.onloadend = () => {
+                    this.setState({image: reader.result})
+                }
+            })
+
+            
             const formData = new FormData()
 
             files.forEach((file, i) => {
@@ -127,16 +138,22 @@ export default class SignUp extends React.Component {
                             onChange={this.handleChange}
                         />
                         <p>Your avatar</p>
-                        <label htmlFor='image'>
-                            <span className="ava_icon"><i class="far fa-image"></i></span>
-                        </label>
-                        <input
-                            name="avatar"
-                            placeholder="Avatar"
-                            id="image"
-                            type="file" 
-                            onChange={this.handleChange}
-                        />
+                        {this.state.image.length == 0
+                        ? 
+                        <>
+                            <label htmlFor='image'>
+                                <span className="ava_icon"><i class="far fa-image"></i></span>
+                            </label>
+                            <input
+                                name="avatar"
+                                placeholder="Avatar"
+                                id="image"
+                                type="file" 
+                                onChange={this.handleChange}
+                            />
+                        </>
+                        : <img className="avatar" src={this.state.image} alt=""/>
+                        }
                        
                         <button>SignUp</button>
                         <p className="remind">Already have an account? <a href="/signin">Sign In</a></p>
