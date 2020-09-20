@@ -26,7 +26,7 @@ export default class EventDetails extends React.Component {
         return (
             <div className="event-details">
                 <div className="quick-info">
-                    <h1>Event #</h1>
+                    <h2>Event #</h2>
                     <p>Created by</p>
                     <p>Played for how long</p>
                 </div>
