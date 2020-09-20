@@ -1,5 +1,8 @@
 .event-details {
     display: flex;
+    justify-content: center;
+    width: 80%;
+    // background-color: yellow;
 
     .quick-info {
         width: 25%;
@@ -13,7 +16,7 @@
     }
 
     .access {
-        width: 75%;
+        width: 63%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -26,7 +29,7 @@
             margin-left: 50px;
             color: white;
             padding: 50px;
-            width: 75%;
+            width: 100%;
         }
 
         .comments {
@@ -66,7 +69,19 @@
                 }
 
                 .text {
-                    
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    .name {
+                        font-size: 10px;
+                        margin: 0;
+                        color: grey
+                    }
+
+                    .content {
+                        margin: 0
+                    }
                 }
             }
         }

@@ -42,7 +42,10 @@ export default class EventDetails extends React.Component {
                         {this.state.comments.map(text => 
                             <div className="comment">
                                 <img className="avatar" src="https://res.cloudinary.com/zofuku/image/upload/v1600635037/Profile-PNG-Icon_wdgkjg.png"/>
-                                <p className="text">{text}</p>
+                                <div className="text">
+                                    <p className="name">Anonymous</p>
+                                    <p className="content">{text}</p>
+                                </div>
                             </div>
                         )}
                     </div>
