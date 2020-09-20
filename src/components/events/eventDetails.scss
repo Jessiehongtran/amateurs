@@ -2,13 +2,18 @@
     display: flex;
 
     .quick-info {
-        width: 20%;
-        border-right: 1px solid grey;
-        height: 100vh
+        width: 25%;
+        border-right: 1px solid #F2F2F2;
+        height: 100vh;
+        padding-right: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-family: 'Poppins', sans-serif;
     }
 
     .access {
-        width: 80%;
+        width: 75%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -34,10 +39,11 @@
             align-items: flex-start;
 
             input {
-                padding: 12px;
-                width: 350px;
-                border-radius: 20px;
-                border: 1px solid grey
+                padding: 12px 12px 12px 30px;
+                width: 500px;
+                border-radius: 26px;
+                border: 1px solid #800FF8;
+                font-family: 'Poppins', sans-serif;
             }
 
             input:focus {
@@ -48,14 +54,19 @@
                 display: flex;
                 align-items: center;
                 margin-top: 20px;
+                font-family: 'Poppins', sans-serif;
 
                 .avatar {
                     border-radius: 50%;
                     padding: 3px;
-                    width: 40px;
-                    height: 40px;
-                    border: 1px solid grey;
+                    width: 35px;
+                    height: 35px;
+                    border: 1px solid #e0dfdf;
                     margin-right: 10px;
+                }
+
+                .text {
+                    
                 }
             }
         }
