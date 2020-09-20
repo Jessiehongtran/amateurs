@@ -21,7 +21,7 @@ export default class EventDetails extends React.Component {
                             placeholder="Leave a comment" 
                         />
                         <div className="comment">
-                            <img className="avatar" src="https://res.cloudinary.com/zofuku/image/upload/v1600631946/fiddle-player-cartoon-hand-in-hand-violin-png-image-and-clipart-violin-player-png-650_651_ln8m5b.jpg"/>
+                            <img className="avatar" src="https://res.cloudinary.com/zofuku/image/upload/v1600635037/Profile-PNG-Icon_wdgkjg.png"/>
                             <p>hahaha</p>
                         </div>
                     </div>
