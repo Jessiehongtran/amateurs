@@ -46,7 +46,7 @@ export default class Players extends React.Component {
                                 {player.nick_name}
                             </h4>
                             <p className="age">
-                                Age: {player.year_of_birth === null ? 'unknown' : (currentYear - parseInt(player.year_of_birth)) + "yrs old"} 
+                                {player.year_of_birth === null ? 'unknown' : (currentYear - parseInt(player.year_of_birth)) + "yrs old"} 
                             </p>
                             {/* <p className="join_duration">
                                 Joined: {

@@ -12,8 +12,11 @@ export default class Participants extends React.Component {
     }
 
     componentDidMount(){
-        axios.get(`${API_URL}/events/participants/${this.state.eventId}`)
+        console.log('props in participants', this.props)
+        console.log('eventId', this.props.eventId)
+        axios.get(`${API_URL}/events/participants/${this.props.eventId}`)
             .then(res => {
+                console.log('participants', res.data)
                 this.setState({participants: res.data})
             })
             .catch(err => {

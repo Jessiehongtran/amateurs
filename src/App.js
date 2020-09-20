@@ -5,6 +5,7 @@ import Main from './components/main/main';
 import SignIn from './components/players/signin';
 import CreateLive from './components/events/createLive';
 import SignUp from './components/players/signup';
+import EventDetails from './components/events/eventDetails';
 import { Route } from 'react-router-dom';
 
 function App() {
@@ -18,6 +19,19 @@ function App() {
               <>
                 <Nav  {...props}/>
                 <Main {...props}/>
+              </>
+            )
+          }
+        } 
+      />
+      <Route
+        exact path="/eventDetails"
+        render={
+          props => {
+            return (
+              <>
+                <Nav  {...props}/>
+                <EventDetails  {...props}/>
               </>
             )
           }

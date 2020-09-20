@@ -1,0 +1,59 @@
+.event-details {
+    display: flex;
+
+    .quick-info {
+        width: 20%;
+        border-right: 1px solid grey;
+        height: 100vh
+    }
+
+    .access {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    
+
+        .banner {
+            background-color: #800FF8;
+            margin-left: 50px;
+            color: white;
+            padding: 50px;
+            width: 75%;
+        }
+
+        .comments {
+            width: 100%;
+            margin-left: 50px;
+            margin-top: 50px;
+            // background-color: blue;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            input {
+                padding: 10px;
+                width: 350px;
+                border-radius: 20px;
+                border: 1px solid grey
+            }
+
+            input:focus {
+                outline: none
+            }
+
+            .comment {
+                display: flex;
+                margin-top: 20px;
+
+                .avatar {
+                    border-radius: 20%;
+                    width: 50px;
+                    height: 50px;
+                    border: 1px solid grey;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

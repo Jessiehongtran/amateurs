@@ -41,6 +41,7 @@ export default class CreateLive extends React.Component {
              .then(res => {
                  console.log(res.data)
                  this.setState({posted: true})
+                 this.props.history.push('/')
              })
              .catch(err => {
                  console.log(err)

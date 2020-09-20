@@ -33,7 +33,7 @@ export default class LiveEvents extends React.Component {
                 <div className="events">
                     {events && events.length > 0
                     ? events.map(event => 
-                        <div key={event.id}><Event eventId={event.id}/></div>
+                        <div key={event.id}><Event eventId={event.id} history={this.props.history}/></div>
                         )
                     : null}
                 </div>

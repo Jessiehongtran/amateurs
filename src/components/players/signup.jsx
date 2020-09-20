@@ -81,7 +81,7 @@ export default class SignUp extends React.Component {
                 //update user_id on localStorage
                 localStorage.setItem('user_id', res.data.id)
                 //push to go back
-                // this.props.history.goBack()
+                this.props.history.push('/')
              })
              .catch(err => {
                  console.log(err)
