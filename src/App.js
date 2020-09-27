@@ -25,7 +25,7 @@ function App() {
         } 
       />
       <Route
-        exact path="/eventDetails"
+        exact path="/eventDetails/:eventId"
         render={
           props => {
             return (

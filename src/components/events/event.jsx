@@ -67,7 +67,7 @@ export default class Event extends React.Component {
         console.log(this.props.eventId)
 
         return (
-            <div className="each_event" onClick={() => this.props.history.push('/eventDetails')}>
+            <div className="each_event" onClick={() => this.props.history.push(`/eventDetails/${this.state.eventId}`)}>
                 <div className="icon_joins">
                     <div className="icon">
                         <span className="music-icon"><i class="fas fa-music"></i></span>

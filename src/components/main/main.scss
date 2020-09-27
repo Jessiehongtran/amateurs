@@ -1,14 +1,17 @@
+
 .main_container {
     display: flex;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
     background-color: #F6F6F6  ;
+    height: 100vh;
+    
 
     .main {
         display: flex;
-        // flex-wrap: wrap;
+        height: 100vh; /* or any value */
+        overflow-y: scroll;
         width: 70%;
-        height: 100%;
         border-right: 1px solid #F2F2F2;
         border-left: 1px solid #F2F2F2;
         color: #2F2D2D ;
