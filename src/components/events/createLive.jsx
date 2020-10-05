@@ -39,7 +39,6 @@ export default class CreateLive extends React.Component {
     postEvent(event){
         Axios.post(`${API_URL}/events`, event)
              .then(res => {
-                 console.log(res.data)
                  this.setState({posted: true})
                  this.props.history.push('/')
              })

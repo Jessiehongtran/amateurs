@@ -14,6 +14,22 @@
         align-items: flex-end;
         font-family: 'Poppins', sans-serif;
         text-align: right;
+
+        .played {
+            padding: 5px 8px 5px 8px;
+            background-color: #4CBB17;
+            color: white;
+            border-radius: 4px;
+        }
+
+        .not_played {
+            padding: 5px 8px 5px 8px;
+            background-color: #ff0f0f;
+            color: white;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+        }
     }
 
     .access {
@@ -31,6 +47,11 @@
             color: white;
             padding: 50px;
             width: 100%;
+            margin-top: 30px;
+        }
+
+        .participants {
+            margin-left: 50px;
         }
 
         .comments {

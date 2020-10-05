@@ -1,5 +1,6 @@
 .live_events {
     width: 70%;
+    height: 4000px; // what if the length gets bigger
     border-right: 1px solid #F2F2F2;
     display: flex;
     flex-direction: column;

@@ -2,6 +2,7 @@ import React from 'react';
 import { API_URL } from '../../config';
 import axios from 'axios';
 import './event.scss';
+import { Link } from 'react-router-dom';
 import Participants from './participants'
 
 export default class Event extends React.Component {
@@ -10,7 +11,8 @@ export default class Event extends React.Component {
         this.state = {
             event: {},
             eventId: this.props.eventId,
-            host: {}
+            host: {},
+            participants: []
         }
     }
 
@@ -30,6 +32,13 @@ export default class Event extends React.Component {
              .catch(err => {
                  console.log(err)
              })
+        axios.get(`${API_URL}/events/participants/${this.props.eventId}`)
+            .then(res => {
+                this.setState({participants: res.data})
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     updateJoin(){
@@ -42,32 +51,37 @@ export default class Event extends React.Component {
             )
             .then(res => {
                 console.log(res.data)
+                 //update join count in event
+                axios.patch(`${API_URL}/events/${this.state.eventId}`, 
+                    {
+                        joined: this.state.event.joined + 1
+                    }
+                )
+                    .then(res => {
+                        
+                    })
+                    .catch(err => {
+                        console.log(err)
+                        })
             })
             .catch(err => {
                 console.log(err)
                 })
-        //update join count in event
-        axios.patch(`${API_URL}/events/${this.state.eventId}`, 
-                {
-                    joined: this.state.event.joined + 1
-                }
-             )
-             .then(res => {
-                 console.log(res.data)
-             })
-             .catch(err => {
-                console.log(err)
-                })
+       
     }
 
 
     render(){
         const {event, host} = this.state
-        console.log('event', event)
-        console.log(this.props.eventId)
+        const {participants} = this.state
+        let list_participants = participants
+
+        if (participants.length > 10){
+            list_participants = participants.slice(0,10)
+        }
 
         return (
-            <div className="each_event" onClick={() => this.props.history.push(`/eventDetails/${this.state.eventId}`)}>
+            <div className="each_event">
                 <div className="icon_joins">
                     <div className="icon">
                         <span className="music-icon"><i class="fas fa-music"></i></span>
@@ -83,16 +97,35 @@ export default class Event extends React.Component {
                     <div className="created_by">
                         Created by {host.nick_name} 
                     </div>
-                    <Participants eventId = {this.state.eventId}/>
-                    <div className="how_long">
-                        played for 3 hours
+                    <Participants participants = {list_participants}/>
+                    <div className="date_time">
+                        <div className="date">
+                            {event.start_date}
+                        </div>
+                        {event.start_time
+                        ? <div className="time">
+                            {event.start_time}
+                          </div>
+                        : null}
                     </div>
                 </div>
                 <div className="join-btn">
-                    <a 
-                    href={`https://client-a008qpss6.vercel.app/room/${event.id}`}
+                    <Link
+                    class="join" 
+                    to={{
+                        pathname: `/eventDetails/${this.state.eventId}`, 
+                        query: {
+                            nick_name: host.nick_name, 
+                            start_time: event.start_time,
+                            start_date: event.start_date,
+                            title: event.title,
+                            description: event.description,
+                            history: this.props.history,
+                            participants: list_participants
+                        } 
+                    }}
                     onClick={() => this.updateJoin()}
-                    >Join</a>
+                    >Checkout</Link>
                 </div>
             </div>
         

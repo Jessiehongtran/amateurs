@@ -57,8 +57,26 @@
 
         
 
-        .how_long {
+        .date_time {
+            display: flex;
+            margin-top: 10px;
 
+            .date {
+                padding: 5px 8px 5px 8px;
+                background-color: #D1CECD;
+                color: black;
+                border-radius: 4px;
+                font-size: 12px;
+                margin-right: 10px;
+            }
+
+            .time {
+                padding: 5px 8px 5px 8px;
+                background-color: #D8DAFA;
+                color: black;
+                border-radius: 4px;
+                font-size: 12px;
+            }
         }
 
     }
@@ -68,7 +86,7 @@
         flex-direction: column;
         justify-content: flex-start;
 
-        a {
+        .join {
             text-decoration: none;
             border-radius: 4px;
             padding: 8px 12px 8px 12px;
@@ -77,8 +95,8 @@
             font-weight: bold;
         }
 
-        a:hover {
-            color: #424241;
+        .join:hover {
+            color: yellow
         }
     }
 

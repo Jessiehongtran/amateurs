@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 30%;
     background-color: #FCFCFC  ;
+    height: 4000px; // what if the length gets bigger
 
     .each_player {
         display: flex;

@@ -1,6 +1,7 @@
 .who_joined {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
+    width: 100%;
 
     .avatar {
         width: 30px;
