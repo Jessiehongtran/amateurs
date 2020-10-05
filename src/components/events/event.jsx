@@ -109,7 +109,7 @@ export default class Event extends React.Component {
                     <Participants participants = {list_participants}/>
                     <div className="date_time">
                         <div className="date">
-                            {this.extractDate(event.start_date)}
+                            {event.start_date ? this.extractDate(event.start_date): null}
                         </div>
                         {event.start_time
                         ? <div className="time">
