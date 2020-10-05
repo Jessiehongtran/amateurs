@@ -7,6 +7,7 @@ import CreateLive from './components/events/createLive';
 import SignUp from './components/players/signup';
 import EventDetails from './components/events/eventDetails';
 import { Route } from 'react-router-dom';
+import HowItWorks from './components/main/howitworks';
 
 function App() {
   return (
@@ -19,6 +20,19 @@ function App() {
               <>
                 <Nav  {...props}/>
                 <Main {...props}/>
+              </>
+            )
+          }
+        } 
+      />
+      <Route
+        exact path="/howitworks"
+        render={
+          props => {
+            return (
+              <>
+                <Nav  {...props}/>
+                <HowItWorks {...props}/>
               </>
             )
           }

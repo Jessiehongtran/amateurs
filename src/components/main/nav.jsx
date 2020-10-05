@@ -17,7 +17,7 @@ export default class Nav extends React.Component {
                     <h1>Amateurs</h1>
                 </div>
                 <div className="navigation">
-                    <a>How it works?</a>
+                    <a href="/howitworks">How it works?</a>
                     <a href="/signup">Get started</a>
                     <button onClick={() => this.props.history.push('/createLive')}>Go Live</button>
                 </div>
