@@ -70,6 +70,15 @@ export default class Event extends React.Component {
        
     }
 
+    extractDate(date){
+        for (let i=0; i< date.length; i++){
+            if (date[i] == 'T'){
+                return date.slice(0,i)
+            }
+        }
+        return date
+    }
+
 
     render(){
         const {event, host} = this.state
@@ -100,7 +109,7 @@ export default class Event extends React.Component {
                     <Participants participants = {list_participants}/>
                     <div className="date_time">
                         <div className="date">
-                            {event.start_date}
+                            {this.extractDate(event.start_date)}
                         </div>
                         {event.start_time
                         ? <div className="time">
